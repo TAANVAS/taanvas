@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas LMS</title>
     <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
-    <script src="js/committeeApp.js" defer></script>
+    <script src="../js/committeeApp.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -28,7 +28,7 @@
     </aside> 
     <div class="container mx-auto p-8">
         <h1 class="text-2xl font-bold text-center mb-4">Application</h1>
-        <table class="min-w-full bg-white border border-gray-300">
+        <table id="appTable" class="mx-auto bg-white border border-gray-300">
             <thead class="bg-gray-100">
                 <tr>
                     <th class="py-2 px-4 border-b border-gray-300">Application Name</th>
@@ -41,7 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="hidden">
                     <td class="py-2 px-4 border-b border-gray-300">Caleb Panoch</td>
                     <td class="py-2 px-4 border-b border-gray-300">2022-12-01</td>
                     <td class="py-2 px-4 border-b border-gray-300">View CV</td>
@@ -53,7 +53,7 @@
                         <button class="denyButton px-4 py-2 bg-red-500 text-white rounded">Deny</button>
                     </td> 
                 </tr>
-                <tr>
+                <tr class="hidden">
                     <td class="py-2 px-4 border-b border-gray-300">Jane Smith</td>
                     <td class="py-2 px-4 border-b border-gray-300">2023-12-05</td>
                     <td class="py-2 px-4 border-b border-gray-300">View CV</td>

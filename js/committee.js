@@ -52,7 +52,24 @@ function loadPosts(numPosts) {
                 appliedDateCell.textContent = "N/A"
             }
             
-            CVCell.textContent = results[step].get("CV");
+            if (results[step].get("CV")) {
+                // Assuming 'fileLink' contains the URL of the PDF file
+                var fileLink = results[step].get("CV")._url;
+                // Create an anchor element
+                var linkElement = document.createElement('a');
+                // Set the href attribute to the URL of the PDF file
+                linkElement.setAttribute('href', fileLink);
+                linkElement.style.textDecoration = "underline";
+                linkElement.style.color = "blue"; // Adjust the color as needed
+                linkElement.setAttribute('target', '_blank');
+                // Set the text content to "CV.pdf"
+                linkElement.textContent = "CV.pdf";
+                // Append the link
+                CVCell.appendChild(linkElement);
+            } else {
+                CVCell.textContent = "N/A"
+            }
+
                
             // Create a button element
             var button = document.createElement('button');
@@ -62,7 +79,7 @@ function loadPosts(numPosts) {
 
             // Set the onclick attribute of the button to a JavaScript function
             button.onclick = function() {
-                window.location.href = window.location.origin+'/application.html?username='+encodeURIComponent(results[step].get("username"));
+                window.location.href = window.location.origin+'/ta_committee/application.html?username='+encodeURIComponent(results[step].get("username"));
             };
 
 
